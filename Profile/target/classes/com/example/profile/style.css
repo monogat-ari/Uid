@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraft.ttf');
+}
+
+
+.label {
+    -fx-text-fill: #000000;
+    -fx-font-family: 'Minecraft';
+}
+
+.statisticLabel {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Minecraft';
+    -fx-font-size: 14px;
+}
+
+.statisticPane {
+    -fx-border-color: #2C1B0E, #C9A46A, #8B5E3C; /* 3 colori */
+    -fx-border-width: 6, 4, 2;                  /* spessori diversi per creare effetto “fasce” */
+    -fx-border-insets: 0, 6, 10;                /* distanze interne, per non sovrapporre le linee */
+    -fx-border-style: solid;
+    -fx-background-color: #3F2A19;
+}
+
+.cell-pane {
+    -fx-border-color: #2C1B0E, #C9A46A, #8B5E3C;
+    -fx-border-width: 6, 4, 2;
+    -fx-border-insets: 0, 6, 10;
+    -fx-border-style: solid;
+}
+
+/* Contenitore della ProgressBar */
+.progress-bar {
+    -fx-background-color: #222222; /* sfondo scuro */
+    -fx-border-color: #000000;     /* bordo nero netto */
+    -fx-border-width: 2px;
+    -fx-border-radius: 0;          /* angoli netti */
+    -fx-background-radius: 0;      /* angoli netti */
+}
+
+/* La barra di avanzamento interna */
+.progress-bar .bar {
+    -fx-background-color: #00ff00; /* colore verde pixel */
+    -fx-background-radius: 0;       /* angoli netti */
+    -fx-border-radius: 0;           /* angoli netti */
+}
+
+.attBar .bar {
+    -fx-background-color: #D62828;
+}
+
+.defBar .bar {
+    -fx-background-color: #1D3557;
+}
+
+.velBar .bar {
+    -fx-background-color: #FFD60A;
+}
+
+.intBar .bar {
+    -fx-background-color: #8E44AD;
+}
