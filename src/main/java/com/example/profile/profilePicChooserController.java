@@ -33,6 +33,12 @@ public class profilePicChooserController {
         pic2.setUserData("@images/chr_icon_1007.png");
         pic3.setUserData("@images/chr_icon_1025.png");
         pic4.setUserData("@images/chr_icon_1053.png");
+
+        toggleGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            if (newToggle == null) {
+                toggleGroup.selectToggle(oldToggle);
+            }
+        });
     }
 
     public void initData(profileController mainController, GridPane mainContentPane, String currentAvatarUrl) {
@@ -64,7 +70,6 @@ public class profilePicChooserController {
             //salva l'immagine
             Preferences prefs = Preferences.userNodeForPackage(profileController.class);
             prefs.put("avatar_url", imageUrl);
-            mainController.updateProfilePicture(imageUrl);
         }
 
         // Rimuove l'effetto blur e riattiva il pannello principale
