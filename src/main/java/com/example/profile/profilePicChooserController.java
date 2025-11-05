@@ -16,14 +16,24 @@ public class profilePicChooserController {
     @FXML private ToggleButton pic2;
     @FXML private ToggleButton pic3;
     @FXML private ToggleButton pic4;
+    private final ToggleGroup toggleGroup = new ToggleGroup();
+
+    /*
+    @FXML private ToggleButton banner1;
+    @FXML private ToggleButton banner2;
+    @FXML private ToggleButton banner3;
+    @FXML private ToggleButton banner4;
+    private final ToggleGroup toggleBannerGroup = new ToggleGroup();
+    */
 
     @FXML private StackPane picChooserPane;
 
     private GridPane blurredPane;
     private profileController mainController;
-    private final ToggleGroup toggleGroup = new ToggleGroup();
+
 
     public void initialize() {
+        //Toggles per l'immagine profilo
         pic1.setToggleGroup(toggleGroup);
         pic2.setToggleGroup(toggleGroup);
         pic3.setToggleGroup(toggleGroup);
@@ -39,6 +49,23 @@ public class profilePicChooserController {
                 toggleGroup.selectToggle(oldToggle);
             }
         });
+
+        /*Toggles per il banner
+        banner1.setToggleGroup(toggleBannerGroup);
+        banner2.setToggleGroup(toggleBannerGroup);
+        banner3.setToggleGroup(toggleBannerGroup);
+        banner4.setToggleGroup(toggleBannerGroup);
+
+        banner1.setUserData("@images/Banner1.png");
+        banner2.setUserData("@images/Banner2.png");
+        banner3.setUserData("@images/Banner3.jpg");
+        banner4.setUserData("@images/Banner4.jpg");
+
+        toggleBannerGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            if (newToggle == null) {
+                toggleBannerGroup.selectToggle(oldToggle);
+            }
+        }); */
     }
 
     public void initData(profileController mainController, GridPane mainContentPane, String currentAvatarUrl) {
@@ -51,9 +78,8 @@ public class profilePicChooserController {
             String buttonUrl = (String) button.getUserData();
 
             if (buttonUrl != null && buttonUrl.equals(currentAvatarUrl)) {
-                // Seleziona il bottone corrispondente
                 button.setSelected(true);
-                break; // Trovato, esci dal ciclo
+                break;
             }
         }
     }

@@ -88,7 +88,7 @@
             </Tab>
           <Tab text="Banner">
                <content>
-                  <ScrollPane fitToHeight="true" hbarPolicy="NEVER" prefHeight="489.0" prefWidth="700.0" vvalue="0.85">
+                  <ScrollPane fitToHeight="true" hbarPolicy="NEVER" prefHeight="489.0" prefWidth="700.0">
                      <content>
                         <StackPane prefHeight="150.0" prefWidth="700.0">
                            <children>
