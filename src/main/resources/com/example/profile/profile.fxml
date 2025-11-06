@@ -30,7 +30,7 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="181.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="profileBannerImage" fitHeight="181.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/Banner1.png" />
                      </image>

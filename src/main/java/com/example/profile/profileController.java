@@ -24,9 +24,12 @@ public class profileController {
     @FXML private StackPane rootStackPane;
     @FXML private GridPane mainContentPane;
     @FXML private ImageView profilePicImage;
+    @FXML private ImageView profileBannerImage;
 
     private String currentAvatarUrl = "@images/chr_icon_1052.png";
+    private String currentBannerUrl = "@images/Banner1.png";
 
+    //Spiderchart
     private final String[] labels = {"Attacco", "Difesa", "Velocità"};
     private final double[] values = {80, 60, 50}; // 0–100
 
@@ -38,18 +41,20 @@ public class profileController {
     public void initialize() {
         drawSpiderChart();
         loadUserAvatar();
+        loadUserBanner();
     }
 
     private void loadUserAvatar() {
         Preferences prefs = Preferences.userNodeForPackage(profileController.class);
+        String avatarToLoad = prefs.get("avatar_url", currentAvatarUrl);
+        updateProfilePicture(avatarToLoad); // Imposta l'immagine e aggiorna il nostro campo 'currentAvatarUrl'
+    }
 
-        String defaultAvatar = "@images/chr_icon_1052.png";
-        String savedAvatar = prefs.get("avatar_url", defaultAvatar);
 
-        String avatarToLoad = prefs.get("avatar_url", defaultAvatar);
-
-        // Imposta l'immagine e aggiorna il nostro campo 'currentAvatarUrl'
-        updateProfilePicture(avatarToLoad);
+    private void loadUserBanner() {
+        Preferences prefs = Preferences.userNodeForPackage(profileController.class);
+        String bannerToLoad = prefs.get("banner_url", currentBannerUrl);
+        updateBannerPicture(bannerToLoad); // Imposta l'immagine e aggiorna il nostro campo 'currentAvatarUrl'
     }
 
     @FXML
@@ -60,16 +65,13 @@ public class profileController {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("profilePicChooser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("prova2.fxml"));
             Parent profileView = loader.load();
 
             profilePicChooserController chooserController = loader.getController();
 
-            // 1. Ottieni l'URL dell'avatar attuale dalle preferenze
-            String currentAvatarUrl = getUrlFromCurrentlyDisplayedImage();
-
-            // 2. Passa l'URL attuale al metodo initData
-            chooserController.initData(this, mainContentPane, this.currentAvatarUrl);
+            //Passa l'URL attuale al metodo initData
+            chooserController.initData(this, mainContentPane, this.currentAvatarUrl, this.currentBannerUrl); //aggiungi currentBannerUrl
 
             GaussianBlur blur = new GaussianBlur(10);
             mainContentPane.setEffect(blur);
@@ -82,32 +84,6 @@ public class profileController {
         }
     }
 
-    private String getUrlFromCurrentlyDisplayedImage() {
-        // Fallback di sicurezza
-        String defaultAvatar = "@images/chr_icon_1052.png";
-
-        if (profilePicImage == null || profilePicImage.getImage() == null) {
-            return defaultAvatar;
-        }
-
-        String fullUrl = profilePicImage.getImage().getUrl();
-
-        // L'URL completo è un percorso file (es. "file:/.../images/chr_icon_1007.png")
-        // Dobbiamo trovare la parte "/images/" per ricostruire il nostro formato
-
-        if (fullUrl != null && fullUrl.contains("/images/")) {
-            int imagesIndex = fullUrl.lastIndexOf("/images/");
-
-            // Estrae "images/chr_icon_1007.png"
-            String relativePath = fullUrl.substring(imagesIndex + 1);
-
-            // Ricostruisce il formato "@images/..."
-            return "@" + relativePath;
-        }
-
-        // Se non troviamo il percorso, usiamo il default
-        return defaultAvatar;
-    }
 
     public void updateProfilePicture(String imageUrl) {
         this.currentAvatarUrl = imageUrl;
@@ -120,6 +96,22 @@ public class profileController {
         try {
             Image newPic = new Image(getClass().getResourceAsStream(resourceUrl));
             profilePicImage.setImage(newPic);
+        } catch (Exception e) {
+            System.err.println("Errore nel caricare l'immagine: " + resourceUrl);
+        }
+    }
+
+    public void updateBannerPicture(String imageUrl) {
+        this.currentBannerUrl = imageUrl;
+
+        String resourceUrl = imageUrl;
+        if (resourceUrl.startsWith("@")) {
+            resourceUrl = resourceUrl.substring(1);
+        }
+
+        try {
+            Image newPic = new Image(getClass().getResourceAsStream(resourceUrl));
+            profileBannerImage.setImage(newPic);
         } catch (Exception e) {
             System.err.println("Errore nel caricare l'immagine: " + resourceUrl);
         }

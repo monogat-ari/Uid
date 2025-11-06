@@ -17,6 +17,14 @@
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 180, 0.4), 15, 0.3, 0, 0);
 }
 
+.icon-button:focused {
+    /* Queste proprietà neutralizzano gli stili di default di JavaFX
+       per il focus, che causano il "restringimento" */
+    -fx-border-width: 0;
+    -fx-background-insets: 0; /* Rimuove ombre interne/insets */
+    -fx-box-shadow: none;     /* Rimuove altri effetti di focus */
+}
+
 .label {
     -fx-text-fill: #000000;
     -fx-font-family: 'Minecraft';
