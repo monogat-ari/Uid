@@ -41,7 +41,7 @@ public class profileController {
     public void initialize() {
         drawSpiderChart();
         loadUserAvatar();
-        //loadUserBanner();
+        loadUserBanner();
     }
 
     private void loadUserAvatar() {
@@ -50,13 +50,13 @@ public class profileController {
         updateProfilePicture(avatarToLoad); // Imposta l'immagine e aggiorna il nostro campo 'currentAvatarUrl'
     }
 
-    /*
+
     private void loadUserBanner() {
         Preferences prefs = Preferences.userNodeForPackage(profileController.class);
         String bannerToLoad = prefs.get("banner_url", currentBannerUrl);
         updateBannerPicture(bannerToLoad); // Imposta l'immagine e aggiorna il nostro campo 'currentAvatarUrl'
     }
-    */
+
     @FXML
     protected void handleProfilePicClick(ActionEvent event) {
         if (rootStackPane.lookup("#picChooserPane") != null) {
@@ -65,13 +65,13 @@ public class profileController {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("profilePicChooser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("prova2.fxml"));
             Parent profileView = loader.load();
 
             profilePicChooserController chooserController = loader.getController();
 
             //Passa l'URL attuale al metodo initData
-            chooserController.initData(this, mainContentPane, this.currentAvatarUrl); //aggiungi currentBannerUrl
+            chooserController.initData(this, mainContentPane, this.currentAvatarUrl, this.currentBannerUrl); //aggiungi currentBannerUrl
 
             GaussianBlur blur = new GaussianBlur(10);
             mainContentPane.setEffect(blur);
@@ -100,7 +100,7 @@ public class profileController {
             System.err.println("Errore nel caricare l'immagine: " + resourceUrl);
         }
     }
-    /*
+
     public void updateBannerPicture(String imageUrl) {
         this.currentBannerUrl = imageUrl;
 
@@ -115,7 +115,7 @@ public class profileController {
         } catch (Exception e) {
             System.err.println("Errore nel caricare l'immagine: " + resourceUrl);
         }
-    }*/
+    }
 
 
 
