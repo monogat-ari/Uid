@@ -3,12 +3,56 @@
     src: url('Minecraft.ttf');
 }
 
-.icon-button {
+/* --- INIZIO BLOCCO ICON-BUTTON --- */
+
+/* 1. Stile base: Assicura che non ci siano bordi o padding */
+.toggle-button.icon-button {
     -fx-background-color: transparent;
+    -fx-padding: 0;
     -fx-border-width: 0;
-    -fx-padding: 0; /* Rimuove qualsiasi spazio extra */
+    -fx-background-insets: 0;
 }
 
+/* 2. Stile da selezionato: Stesse regole di quello base */
+.toggle-button.icon-button:selected {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+
+/* 3. LA REGOLA CHIAVE: Disattiva il "focus ring"
+      sia per lo stato :focused da solo... */
+.toggle-button.icon-button:focused {
+    -fx-background-color: transparent; /* Sfondo trasparente */
+    -fx-padding: 0;                    /* Nessun padding */
+    -fx-border-width: 0;               /* Nessun bordo */
+    -fx-background-insets: 0;          /* Nessun inset */
+    -fx-border-insets: 0;              /* Nessun inset per il bordo */
+
+    /* Queste sono le proprietà che disegnano l'anello di focus.
+       Le azzeriamo per sicurezza. */
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-box-shadow: none;
+}
+
+/* 4. ...E SOPRATTUTTO per lo stato combinato :selected:focused */
+.toggle-button.icon-button:selected:focused {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+
+    /* Azzeriamo anche qui */
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-box-shadow: none;
+}
+
+
+/* 5. Il tuo effetto sull'ImageView interna (va benissimo) */
 .icon-button:hover .image-view {
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 180, 0.4), 15, 0.3, 0, 0);
 }
@@ -17,17 +61,15 @@
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 180, 0.4), 15, 0.3, 0, 0);
 }
 
-.icon-button:focused {
-    /* Queste proprietà neutralizzano gli stili di default di JavaFX
-       per il focus, che causano il "restringimento" */
-    -fx-border-width: 0;
-    -fx-background-insets: 0; /* Rimuove ombre interne/insets */
-    -fx-box-shadow: none;     /* Rimuove altri effetti di focus */
-}
+/* --- FINE BLOCCO ICON-BUTTON --- */
 
 .label {
     -fx-text-fill: #000000;
     -fx-font-family: 'Minecraft';
+}
+
+.picLabel {
+    -fx-font-size: 24px
 }
 
 .statisticLabel {

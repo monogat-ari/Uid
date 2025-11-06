@@ -47,7 +47,7 @@
                      <left>
                         <VBox alignment="CENTER_RIGHT" prefHeight="177.0" prefWidth="140.0" BorderPane.alignment="TOP_RIGHT">
                            <children>
-                              <Button fx:id="profilePicButt" graphicTextGap="5.0" mnemonicParsing="false" onAction="#handleProfilePicClick" styleClass="icon-button">
+                              <Button fx:id="profilePicButt" graphicTextGap="5.0" mnemonicParsing="false" onAction="#handleProfilePicClick" style="-fx-background-color: transparent;" styleClass="icon-button">
                                  <graphic>
                                     <ImageView fx:id="profilePicImage" fitHeight="86.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

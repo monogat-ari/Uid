@@ -2,6 +2,7 @@ package com.example.profile;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -12,17 +13,13 @@ import java.util.prefs.Preferences;
 
 public class profilePicChooserController {
 
-    @FXML private ToggleButton pic1;
-    @FXML private ToggleButton pic2;
-    @FXML private ToggleButton pic3;
-    @FXML private ToggleButton pic4;
+    @FXML private Button confirmPic, confirmBanner;
+
+    @FXML private ToggleButton pic1, pic2, pic3, pic4;
     private final ToggleGroup toggleGroup = new ToggleGroup();
 
 
-    @FXML private ToggleButton banner1;
-    @FXML private ToggleButton banner2;
-    @FXML private ToggleButton banner3;
-    @FXML private ToggleButton banner4;
+    @FXML private ToggleButton banner1, banner2, banner3, banner4;
     private final ToggleGroup toggleBannerGroup = new ToggleGroup();
 
 
@@ -44,6 +41,12 @@ public class profilePicChooserController {
         pic3.setUserData("@images/chr_icon_1025.png");
         pic4.setUserData("@images/chr_icon_1053.png");
 
+        //questo blocco serve a non far cambiare dimensione alla label
+        pic1.setFocusTraversable(false);
+        pic2.setFocusTraversable(false);
+        pic3.setFocusTraversable(false);
+        pic4.setFocusTraversable(false);
+
         toggleGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
             if (newToggle == null) {
                 toggleGroup.selectToggle(oldToggle);
@@ -61,11 +64,21 @@ public class profilePicChooserController {
         banner3.setUserData("@images/Banner3.jpg");
         banner4.setUserData("@images/Banner4.jpg");
 
+        //questo blocco serve a non far cambiare dimensione alla label
+        banner1.setFocusTraversable(false);
+        banner2.setFocusTraversable(false);
+        banner3.setFocusTraversable(false);
+        banner4.setFocusTraversable(false);
+
         toggleBannerGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
             if (newToggle == null) {
                 toggleBannerGroup.selectToggle(oldToggle);
             }
         });
+
+        //questo blocco serve a non far cambiare dimensione alla label
+        confirmPic.setFocusTraversable(false);
+        confirmBanner.setFocusTraversable(false);
     }
 
     public void initData(profileController mainController, GridPane mainContentPane, String currentAvatarUrl, String currentBannerUrl) {
