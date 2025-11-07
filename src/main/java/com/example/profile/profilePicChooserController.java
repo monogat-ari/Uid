@@ -2,28 +2,25 @@ package com.example.profile;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 import java.util.prefs.Preferences;
 
 public class profilePicChooserController {
 
     @FXML private Button confirmPic, confirmBanner;
-
     @FXML private ToggleButton pic1, pic2, pic3, pic4;
     private final ToggleGroup toggleGroup = new ToggleGroup();
-
 
     @FXML private ToggleButton banner1, banner2, banner3, banner4;
     private final ToggleGroup toggleBannerGroup = new ToggleGroup();
 
-
     @FXML private StackPane picChooserPane;
+    @FXML private ScrollPane bannerScrollPane;
 
     private GridPane blurredPane;
     private profileController mainController;
@@ -46,6 +43,7 @@ public class profilePicChooserController {
         pic2.setFocusTraversable(false);
         pic3.setFocusTraversable(false);
         pic4.setFocusTraversable(false);
+        confirmPic.setFocusTraversable(false);
 
         toggleGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
             if (newToggle == null) {
@@ -69,6 +67,7 @@ public class profilePicChooserController {
         banner2.setFocusTraversable(false);
         banner3.setFocusTraversable(false);
         banner4.setFocusTraversable(false);
+        confirmBanner.setFocusTraversable(false);
 
         toggleBannerGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
             if (newToggle == null) {
@@ -76,9 +75,7 @@ public class profilePicChooserController {
             }
         });
 
-        //questo blocco serve a non far cambiare dimensione alla label
-        confirmPic.setFocusTraversable(false);
-        confirmBanner.setFocusTraversable(false);
+
     }
 
     public void initData(profileController mainController, GridPane mainContentPane, String currentAvatarUrl, String currentBannerUrl) {

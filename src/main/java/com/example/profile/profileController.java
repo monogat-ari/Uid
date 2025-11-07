@@ -65,7 +65,7 @@ public class profileController {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("prova2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("profilePicChooser.fxml"));
             Parent profileView = loader.load();
 
             profilePicChooserController chooserController = loader.getController();
