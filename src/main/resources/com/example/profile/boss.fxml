@@ -7,10 +7,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: #262233;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: #262233;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.profile.bossController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1033.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,7 +23,7 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="650.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="650.0" fitWidth="560.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/unnamed.jpg" />
                      </image>
@@ -29,22 +31,54 @@
                   <VBox alignment="CENTER" prefHeight="650.0" prefWidth="1324.0" spacing="20.0">
                      <children>
                         <Label text="Label" textFill="WHITE" />
-                        <Label text="Label" textFill="WHITE" />
-                        <ImageView fitHeight="345.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
+                        <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="134.0" text="Nergigante" textAlignment="CENTER" textFill="WHITE" />
+                        <ImageView fitHeight="271.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/nergigante-removebg-preview.png" />
+                              <Image url="@images/nergigante-removebg-preview - Copia.png" />
                            </image>
                         </ImageView>
-                        <ProgressBar prefWidth="200.0" progress="0.0">
-                           <padding>
-                              <Insets bottom="30.0" />
-                           </padding>
-                        </ProgressBar>
-                        <Button mnemonicParsing="false" text="Button" />
-                     </children></VBox>
+                        <ProgressBar fx:id="hpBossBar" prefHeight="23.0" prefWidth="336.0" progress="1.0" styleClass="hpBossBar" />
+                        <HBox alignment="CENTER" prefHeight="89.0" prefWidth="900.0">
+                           <children>
+                              <Button fx:id="battleButton" mnemonicParsing="false" onAction="#handleBattleButton" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: transparent;" styleClass="icon-button">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/battleButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <StackPane.margin>
+                        <Insets top="20.0" />
+                     </StackPane.margin>
+                  </VBox>
                </children>
             </StackPane>
          </center>
+         <left>
+            <ImageView fitHeight="650.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@images/muro.png" />
+               </image>
+            </ImageView>
+         </left>
+         <right>
+            <ImageView fitHeight="650.0" fitWidth="90.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@images/muro.png" />
+               </image>
+            </ImageView>
+         </right>
       </BorderPane>
+         <Pane fx:id="flashPane" mouseTransparent="true" prefHeight="650.0" prefWidth="1080.0" visible="false" />
    </children>
 </StackPane>

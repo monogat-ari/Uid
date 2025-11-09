@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="400.0">
+         <children>
+            <ImageView fitHeight="181.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Immagine_WhatsApp_2025-10-17_ore_12.44.01_e96b3583-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="261.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/nergigante-removebg-preview%20-%20Copia.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</StackPane>

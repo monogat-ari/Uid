@@ -57,7 +57,7 @@
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 180, 0.4), 15, 0.3, 0, 0);
 }
 
-.icon-button:selected .image-view {
+.icon-button:pressed .image-view {
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 180, 0.4), 15, 0.3, 0, 0);
 }
 
@@ -131,3 +131,6 @@
     -fx-background-color: #8E44AD;
 }
 
+.hpBossBar .bar {
+    -fx-background-color: #ff000d;
+}
