@@ -22,48 +22,38 @@ public class bossController {
     @FXML private Pane flashPane;
     @FXML private Button battleButton;
 
-    // La durata di ogni singolo flash (in millisecondi)
-    private double FLASH_DURATION_MS = 80;
 
-    // Durata dell'ultimo flash nero (1 secondo)
-    private double LAST_FLASH_DURATION_MS = 1000;
+    private double FLASH_DURATION_MS = 120; // Durata minima singolo flash
+    private double LAST_FLASH_DURATION_MS = 1000; // Durata dell'ultimo flash nero (1 secondo)
 
-    /**
-     * Questo metodo è chiamato dal pulsante "Battaglia" (definito in onAction).
-     */
     @FXML
     void handleBattleButton(ActionEvent event) {
 
         battleButton.setDisable(true);
         flashPane.setVisible(true);
 
-        double time1 = FLASH_DURATION_MS; // T=80ms
-        double time2 = time1 + FLASH_DURATION_MS; // T=160ms
-        double time3 = time2 + FLASH_DURATION_MS; // T=240ms (inizio ultimo flash)
-        double time4_fine = time3 + LAST_FLASH_DURATION_MS; // T=240 + 1000 = 1240ms
+        double time1 = FLASH_DURATION_MS; // T=120ms
+        double time2 = time1 + FLASH_DURATION_MS; // T=200ms
+        double time3 = time2 + FLASH_DURATION_MS; // T=280ms (inizio ultimo flash)
+        double time4_fine = time3 + LAST_FLASH_DURATION_MS; // T=280 + 1000 = 1280ms
 
-        // 3. Crea la Timeline per l'animazione
+        //Timeline per l'animazione
         Timeline timeline = new Timeline(
 
-                // T=0ms : Imposta a BIANCO
                 new KeyFrame(Duration.ZERO, e -> {
                     flashPane.setStyle("-fx-background-color: white;");
-                    flashPane.setBlendMode(BlendMode.DIFFERENCE); // <-- 2. ECCO L'INVERSIONE!
+                    flashPane.setBlendMode(BlendMode.DIFFERENCE); // inversione colori
                 }),
 
-                // T=80ms : NERO (Resettando il BlendMode)
                 new KeyFrame(Duration.millis(time1), e -> {
-                    flashPane.setBlendMode(null); // <-- 3. RESETTA IL BLENDMODE
+                    flashPane.setBlendMode(null); // reset inversione colori
                     flashPane.setStyle("-fx-background-color: black;");
                 }),
 
-                // T=160ms (80*2) : BIANCO (Normale)
                 new KeyFrame(Duration.millis(time2), e -> {
-                    // Il BlendMode è già null, quindi questo è un flash bianco normale
                     flashPane.setStyle("-fx-background-color: white;");
                 }),
 
-                // T=240ms (80*3) : NERO (Normale)
                 new KeyFrame(Duration.millis(time3), e -> {
                     flashPane.setStyle("-fx-background-color: black;");
                 }),
@@ -71,24 +61,19 @@ public class bossController {
                 new KeyFrame(Duration.millis(time4_fine))
         );
 
-        // 4. Cosa fare QUANDO la timeline è finita
+        // fine timeline
         timeline.setOnFinished(e -> {
-            // Nascondi il pannello
             flashPane.setVisible(false);
             flashPane.setBlendMode(null);
 
-            // Esegui la logica di transizione alla battaglia
             startBattle();
         });
 
-        // 5. Avvia l'animazione!
         timeline.setDelay(Duration.millis(100));
         timeline.play();
     }
 
-    /**
-     * Metodo fittizio per la transizione
-     */
+    //cambio scena dopo la timeline
     private void startBattle() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("bossBattle.fxml"));
@@ -117,7 +102,6 @@ public class bossController {
         } catch (IOException e) {
             System.err.println("Errore: Impossibile caricare bossbattle.fxml");
             e.printStackTrace();
-            // Se fallisce, riabilita almeno il pulsante per riprovare
             battleButton.setDisable(false);
         }
     }
