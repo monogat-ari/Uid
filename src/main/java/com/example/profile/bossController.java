@@ -100,7 +100,7 @@ public class bossController {
             fadeIn.play();
 
         } catch (IOException e) {
-            System.err.println("Errore: Impossibile caricare bossbattle.fxml");
+            System.err.println("Errore: Impossibile caricare bossBattle.fxml");
             e.printStackTrace();
             battleButton.setDisable(false);
         }
