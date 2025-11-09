@@ -18,7 +18,7 @@
             </ImageView>
             <VBox alignment="CENTER" layoutX="440.0" layoutY="237.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="enemyButton" mnemonicParsing="false" onAction="#handleAttack" prefHeight="45.0" prefWidth="71.0" text="enemy" />
+                  <Button fx:id="enemyButton" mnemonicParsing="false" onAction="#handleAttackBoss" prefHeight="45.0" prefWidth="71.0" text="enemy" />
                   <Button fx:id="playerButton" mnemonicParsing="false" onAction="#handleAttackPlayer" prefHeight="45.0" prefWidth="71.0" text="player" />
                </children>
             </VBox>

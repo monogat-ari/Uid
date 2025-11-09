@@ -23,11 +23,10 @@ public class bossBattleController implements Initializable {
     private final double BALSELLO_Y = -10.0;
     private final Duration DURATA_PASSO = Duration.millis(500);
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Timeline anim1 = creaAnimazioneScattosa(sprite1);
-        Timeline anim2 = creaAnimazioneScattosa(sprite2);
+        Timeline anim1 = Animazione(sprite1);
+        Timeline anim2 = Animazione(sprite2);
         anim2.setDelay(DURATA_PASSO);
 
         anim1.play();
@@ -57,7 +56,7 @@ public class bossBattleController implements Initializable {
     }
 
     @FXML
-    void handleAttack(ActionEvent e) {
+    void handleAttackBoss(ActionEvent e) {
         eseguiAttacco(sprite2, -450, enemyButton);
     }
 
@@ -66,10 +65,8 @@ public class bossBattleController implements Initializable {
         eseguiAttacco(sprite1, 650, playerButton);
     }
 
-
-
-    // (Metodo dall'altra risposta per l'animazione idle "scattosa")
-    private Timeline creaAnimazioneScattosa(Node nodo) {
+    // Animazione sprite
+    private Timeline Animazione(Node nodo) {
         Timeline timeline = new Timeline();
 
         KeyFrame frameIniziale = new KeyFrame(Duration.ZERO,
