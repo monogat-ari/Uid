@@ -68,7 +68,7 @@
                      <right>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="91.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#Home" style="-fx-background-color: transparent;">
                                  <graphic>
                                     <ImageView fitHeight="43.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

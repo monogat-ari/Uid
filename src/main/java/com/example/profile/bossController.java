@@ -19,9 +19,11 @@ import java.io.IOException;
 public class bossController {
 
     // Inietta gli elementi dall'FXML
+    @FXML private Button backButton;
     @FXML private Pane flashPane;
     @FXML private Button battleButton;
 
+    private Scene homeScene;
 
     private double FLASH_DURATION_MS = 120; // Durata minima singolo flash
     private double LAST_FLASH_DURATION_MS = 1000; // Durata dell'ultimo flash nero (1 secondo)
@@ -79,21 +81,15 @@ public class bossController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("bossBattle.fxml"));
             Parent bossBattleRoot = loader.load();
 
-            // 2. IMPOSTA LA NUOVA SCENA COME TRASPARENTE (OPACITÀ = 0)
             bossBattleRoot.setOpacity(0.0);
 
-            // 3. Ottieni la finestra (Stage) corrente
             Stage stage = (Stage) flashPane.getScene().getWindow();
             Scene bossScene = new Scene(bossBattleRoot);
             bossScene.getStylesheets().addAll(flashPane.getScene().getStylesheets());
 
-            // 4. IMPOSTA LA NUOVA SCENA SULLO STAGE
-            // Lo stage ora mostra una scena trasparente, quindi appare ancora nero
             stage.setScene(bossScene);
             stage.show();
 
-            // 5. CREA E AVVIA L'ANIMAZIONE DI FADE-IN
-            // Scegli una durata che ti piace (es. 700 millisecondi)
             FadeTransition fadeIn = new FadeTransition(Duration.millis(700), bossBattleRoot);
             fadeIn.setFromValue(0.0); // Opacità iniziale
             fadeIn.setToValue(1.0);   // Opacità finale
@@ -103,6 +99,20 @@ public class bossController {
             System.err.println("Errore: Impossibile caricare bossBattle.fxml");
             e.printStackTrace();
             battleButton.setDisable(false);
+        }
+    }
+
+    public void setHomeScene(Scene scene) {
+        this.homeScene = scene;
+    }
+
+    @FXML
+    public void Home() {
+        if (homeScene != null) {
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(homeScene);
+        } else {
+            System.err.println("⚠ Nessuna scena Home disponibile!");
         }
     }
 }

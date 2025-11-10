@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
@@ -14,18 +15,21 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.prefs.Preferences;
 
 public class profileController {
 
     @FXML private Canvas canvas;
-    @FXML private Button profilePicButt;
+    @FXML private Button backButton;
     @FXML private StackPane rootStackPane;
     @FXML private GridPane mainContentPane;
     @FXML private ImageView profilePicImage;
     @FXML private ImageView profileBannerImage;
 
+    private Scene homeScene;
     private String currentAvatarUrl = "@images/chr_icon_1052.png";
     private String currentBannerUrl = "@images/Banner1.png";
 
@@ -55,6 +59,10 @@ public class profileController {
         Preferences prefs = Preferences.userNodeForPackage(profileController.class);
         String bannerToLoad = prefs.get("banner_url", currentBannerUrl);
         updateBannerPicture(bannerToLoad); // Imposta l'immagine e aggiorna il nostro campo 'currentAvatarUrl'
+    }
+
+    public void setHomeScene(Scene scene) {
+        this.homeScene = scene;
     }
 
     @FXML
@@ -180,6 +188,16 @@ public class profileController {
             double x = centerX + labelRadius * Math.sin(angle);
             double y = centerY - labelRadius * Math.cos(angle);
             gc.fillText(labels[i], x - 20, y);
+        }
+    }
+
+    @FXML
+    public void Home() {
+        if (homeScene != null) {
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(homeScene);
+        } else {
+            System.err.println("⚠ Nessuna scena Home disponibile!");
         }
     }
 
