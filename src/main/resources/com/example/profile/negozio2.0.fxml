@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1080.0" stylesheets="@../IdeaProjects/Profile/src/main/resources/com/example/profile/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="320.0" minHeight="10.0" prefHeight="228.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="470.0" minHeight="10.0" percentHeight="60.0" prefHeight="422.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <ImageView fitHeight="210.0" fitWidth="216.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/MerchantIcon-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+            <TabPane prefHeight="405.0" prefWidth="1080.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+              <tabs>
+                <Tab text="Hat">
+                     <content>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="361.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Downloads/base%20negozio.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" StackPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="150.0">
+                                       <children>
+                                          <ImageView fitHeight="200.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="202.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="202.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;">
+                                       <graphic>
+                                          <ImageView fitHeight="100.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/assets_task_01k88tbc2nfsn8c8gfap0gebs6_1761232695_img_0-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="BOTTOM_CENTER" prefHeight="97.0" prefWidth="1080.0" spacing="212.0">
+                                       <children>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="114.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-halloween-witch-hat-icon-8bit-game-white-background_360488-247-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="114.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-illustration-knight-helmet-pixelated-war-helmet-knight-medieval-helmet-icon-pixelated_1038602-578-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets top="40.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-king-crown-8bit-260nw-1744416923-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="295.0">
+                                       <children>
+                                          <Label stylesheets="@../IdeaProjects/Profile/src/main/resources/com/example/profile/style.css" text="250" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="750" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="1000" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="23.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </content>
+                </Tab>
+                <Tab text="Clothes">
+                     <content>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="361.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Downloads/base%20negozio.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" StackPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="150.0">
+                                       <children>
+                                          <ImageView fitHeight="200.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="202.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="202.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;">
+                                       <graphic>
+                                          <ImageView fitHeight="100.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/assets_task_01k88tbc2nfsn8c8gfap0gebs6_1761232695_img_0-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="BOTTOM_CENTER" prefHeight="97.0" prefWidth="1080.0" spacing="212.0">
+                                       <children>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="114.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/5be862bcbb0b636ea1174c9627e9593d-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="114.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-illustration-war-armor-260nw-2446376779-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets top="40.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/assets_task_01k85j3gmkfjw8j4hyh50b8a0a_1761123439_img_0-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1080.0" spacing="295.0">
+                                       <children>
+                                          <Label stylesheets="@../IdeaProjects/Profile/src/main/resources/com/example/profile/style.css" text="250" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="750" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="1000" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="23.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </content>
+                </Tab>
+                  <Tab text="Power-Up">
+                     <content>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="361.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Downloads/base%20negozio.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" StackPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="150.0">
+                                       <children>
+                                          <ImageView fitHeight="200.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="202.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="202.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Downloads/item-frame-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;">
+                                       <graphic>
+                                          <ImageView fitHeight="100.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/assets_task_01k88tbc2nfsn8c8gfap0gebs6_1761232695_img_0-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="BOTTOM_CENTER" prefHeight="97.0" prefWidth="1080.0" spacing="212.0">
+                                       <children>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="114.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-halloween-witch-hat-icon-8bit-game-white-background_360488-247-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="114.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-illustration-knight-helmet-pixelated-war-helmet-knight-medieval-helmet-icon-pixelated_1038602-578-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets top="40.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: transparent;">
+                                             <graphic>
+                                                <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../IdeaProjects/Profile/src/main/resources/com/example/profile/imagini/Shop/items/pixel-art-king-crown-8bit-260nw-1744416923-removebg-preview.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" />
+                                             </HBox.margin>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="295.0">
+                                       <children>
+                                          <Label stylesheets="@../IdeaProjects/Profile/src/main/resources/com/example/profile/style.css" text="250" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="750" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="1000" textAlignment="CENTER" textFill="#e4d608">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="23.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </GridPane>
+   </children>
+</StackPane>
