@@ -60,7 +60,7 @@ public class profilePicChooserController {
         banner1.setUserData("@images/Banner1.png");
         banner2.setUserData("@images/Banner2.png");
         banner3.setUserData("@images/Banner3.jpg");
-        banner4.setUserData("@images/Banner4.jpg");
+        banner4.setUserData("@images/Banner4.png");
 
         //questo blocco serve a non far cambiare dimensione alla label
         banner1.setFocusTraversable(false);

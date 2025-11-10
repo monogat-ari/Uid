@@ -83,7 +83,7 @@
             </Tab>
           <Tab text="Banner">
                <content>
-                  <ScrollPane fx:id="bannerScrollPane" fitToHeight="true" hbarPolicy="NEVER" pickOnBounds="false" prefHeight="489.0" prefWidth="700.0">
+                  <ScrollPane fx:id="bannerScrollPane" fitToHeight="true" hbarPolicy="NEVER" hvalue="0.5" pickOnBounds="false" prefHeight="489.0" prefWidth="700.0">
                      <content>
                         <StackPane fx:id="bannerStackPane" prefHeight="150.0" prefWidth="700.0">
                            <children>
@@ -106,7 +106,7 @@
                                        <children>
                                           <ToggleButton fx:id="banner1" mnemonicParsing="false" styleClass="icon-button">
                                              <graphic>
-                                                <ImageView fitHeight="86.0" fitWidth="529.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="100.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/Banner1.png" />
                                                    </image>
@@ -115,7 +115,7 @@
                                           </ToggleButton>
                                           <ToggleButton fx:id="banner2" mnemonicParsing="false" styleClass="icon-button">
                                              <graphic>
-                                                <ImageView fitHeight="86.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="100.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/Banner2.png" />
                                                    </image>
@@ -124,7 +124,7 @@
                                           </ToggleButton>
                                           <ToggleButton fx:id="banner3" mnemonicParsing="false" styleClass="icon-button">
                                              <graphic>
-                                                <ImageView fitHeight="86.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="100.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/Banner3.jpg" />
                                                    </image>
@@ -133,9 +133,9 @@
                                           </ToggleButton>
                                           <ToggleButton fx:id="banner4" mnemonicParsing="false" styleClass="icon-button">
                                              <graphic>
-                                                <ImageView fitHeight="86.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="100.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@images/Banner4.jpg" />
+                                                      <Image url="@images/Banner4.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
