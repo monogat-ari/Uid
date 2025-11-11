@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -80,20 +81,35 @@ public class homeController implements Initializable {
         });
     }
 
-    /*
+
     @FXML
-    private void showAddTaskView(ActionEvent event) {
+    public void showAddTask(ActionEvent event) throws IOException {
         try {
-            if (mainApp != null) {
-                mainApp.showAddTaskView();
-            } else {
-                System.err.println("[DEBUG] mainApp è null in showAddTaskView()");
-            }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("add-task-view.fxml"));
+            Parent addTaskRoot = loader.load();
+
+            addTaskController atc = loader.getController();
+            atc.setParentComponents(this.rootStack, this.rootPane);
+
+            GaussianBlur blur = new GaussianBlur(10);
+            rootPane.setEffect(blur);
+
+            rootPane.setDisable(true);
+            rootStack.getChildren().add(addTaskRoot);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    */
+
+    // Questo codice va aggiunto alla tua classe HelloApplication.java
+
+// DENTRO homeController.java
+
+    /* * Metodo che viene chiamato quando l'utente clicca
+     * un bottone per aprire il DIALOGO task.
+     * (NON la lista, ma proprio il popup per aggiungere)
+     */
 
     @FXML
     public void showBoss(ActionEvent event) throws IOException {
@@ -171,7 +187,6 @@ public class homeController implements Initializable {
         }
     }
 
-    /*
     @FXML
     public void showCloset(ActionEvent event) throws IOException {
         try {
@@ -197,7 +212,7 @@ public class homeController implements Initializable {
         }
     }
 
-
+    /*
     @FXML
     private void handleMenu(ActionEvent event) {
         if (!(event.getSource() instanceof Node node)) return;

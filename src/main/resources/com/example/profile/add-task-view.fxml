@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<StackPane fx:id="addTaskRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.profile.addTaskController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #475c6c;">
+         <center>
+            <ScrollPane fitToWidth="true" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox fx:id="taskContainer" alignment="TOP_LEFT" spacing="10.0">
+                     <padding>
+                        <Insets bottom="15" left="15" right="15" top="15" />
+                     </padding>
+                     <children>
+                        <Label fx:id="emptyLabel" style="-fx-text-fill: gray;" text="Nessun task in programma. Clicca Aggiungi per iniziare!" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" spacing="220.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="10" left="15" right="15" top="10" />
+               </padding>
+               <children>
+                  <Button fx:id="addButton" onAction="#handleAddButton" prefHeight="26.0" prefWidth="129.0" style="-fx-font-weight: bold; -fx-background-color: #add8e6;" text="Aggiungi Task" />
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#setBackButton" prefHeight="26.0" prefWidth="71.0" style="-fx-font-weight: bold; -fx-background-color: #add8e6;" text="Back" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
