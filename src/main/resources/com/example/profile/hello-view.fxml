@@ -23,22 +23,22 @@
         </ImageView>
         <BorderPane fx:id="rootPane" layoutX="10.0" layoutY="10.0" prefHeight="450.0" prefWidth="800.0">
             <left>
-                <VBox alignment="CENTER" prefHeight="164.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+                <VBox alignment="CENTER" prefHeight="475.0" prefWidth="320.0" spacing="30.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showProfile" prefHeight="78.0" prefWidth="174.0" style="-fx-background-color: transparent;">
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showProfile" prefHeight="78.0" prefWidth="174.0" style="-fx-background-color: transparent;" styleClass="icon-button">
                             <graphic>
-                                <ImageView fitHeight="67.0" fitWidth="159.0" pickOnBounds="true">
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@imagini/assets_task_01k7hmdmgdfn9tyjacx9g6093e_1760454729_img_1-removebg-preview.png" />
+                                        <Image url="@images/profile-button.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button fx:id="closetButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCloset" prefHeight="63.0" prefWidth="161.0" style="-fx-background-color: transparent;">
+                        <Button fx:id="closetButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCloset" prefHeight="63.0" prefWidth="161.0" style="-fx-background-color: transparent;" styleClass="icon-button">
                             <graphic>
-                                <ImageView fitHeight="66.0" fitWidth="174.0" pickOnBounds="true">
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@imagini/assets_task_01k7hkqjhgf6qr2etbwq9m3rwt_1760454057_img_0-removebg-preview.png" />
+                                        <Image url="@images/closet-button.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -47,22 +47,22 @@
                 </VBox>
             </left>
             <right>
-                <VBox alignment="CENTER" prefHeight="279.0" prefWidth="267.0" BorderPane.alignment="CENTER">
+                <VBox alignment="CENTER" prefHeight="475.0" prefWidth="320.0" spacing="30.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="bossButton" mnemonicParsing="false" onAction="#showBoss" prefHeight="74.0" prefWidth="166.0" style="-fx-background-color: transparent;">
+                        <Button fx:id="bossButton" mnemonicParsing="false" onAction="#showBoss" prefHeight="74.0" prefWidth="166.0" style="-fx-background-color: transparent;" styleClass="icon-button">
                             <graphic>
-                                <ImageView fitHeight="62.0" fitWidth="156.0" pickOnBounds="true">
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@imagini/oojojojoj-removebg-preview.png" />
+                                        <Image url="@images/bigBoss-button.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button fx:id="shopButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showShop" prefHeight="66.0" prefWidth="207.0" style="-fx-background-color: transparent;">
+                        <Button fx:id="shopButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showShop" prefHeight="66.0" prefWidth="207.0" style="-fx-background-color: transparent;" styleClass="icon-button">
                             <graphic>
-                                <ImageView fitHeight="58.0" fitWidth="154.0" pickOnBounds="true">
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@imagini/bottoneshop-removebg-preview.png" />
+                                        <Image url="@images/shop-button.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -78,13 +78,13 @@
                 </ImageView>
             </center>
             <bottom>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="373.0" BorderPane.alignment="CENTER">
+                <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="1249.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showAddTask" prefHeight="69.0" prefWidth="194.0" style="-fx-background-color: transparent;">
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showAddTask" prefHeight="116.0" prefWidth="333.0" style="-fx-background-color: transparent;" styleClass="icon-button">
                             <graphic>
-                                <ImageView fitHeight="64.0" fitWidth="184.0" pickOnBounds="true">
+                                <ImageView fitHeight="75.0" fitWidth="316.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@imagini/assets_task_01k7hj5d6gfxk9pww4jfya3d0y_1760452407_img_0-removebg-preview.png" />
+                                        <Image url="@images/task-button.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
