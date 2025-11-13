@@ -30,8 +30,7 @@
 }
 
 .icon-button:pressed .image-view {
-    -fx-effect: brightness(-0.4);
-    -fx-opacity: 0.7;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 180, 0.6), 15, 0.6, 0, 0);
 }
 
 /* Blocco per rimuovere l'anello di focus */
