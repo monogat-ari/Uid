@@ -98,7 +98,7 @@
                   </ImageView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Region prefHeight="133.0" prefWidth="370.0" />
+                        <Region prefHeight="133.0" prefWidth="294.0" />
                         <ImageView fx:id="profilePicImageView" fitHeight="74.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/chr_icon_1025.png" />
@@ -117,7 +117,7 @@
                               <ProgressBar prefHeight="23.0" prefWidth="208.0" progress="0.64" />
                            </children>
                         </VBox>
-                        <Region prefHeight="133.0" prefWidth="357.0" />
+                        <Region prefHeight="133.0" prefWidth="264.0" />
                         <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/pixel-art-game-currency-coin-vector.png" />

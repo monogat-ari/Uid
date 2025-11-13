@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.BlendMode;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -23,10 +25,36 @@ public class bossController {
     @FXML private Pane flashPane;
     @FXML private Button battleButton;
 
+    @FXML private ImageView profilePicImageView;
+
     private Scene homeScene;
 
     private double FLASH_DURATION_MS = 120; // Durata minima singolo flash
     private double LAST_FLASH_DURATION_MS = 1000; // Durata dell'ultimo flash nero (1 secondo)
+
+    @FXML
+    private void initialize() {
+        // 1. Imposta l'immagine iniziale caricandola dall'URL nel service
+        String initialUrl = UserProfileService.getInstance().getProfileImageUrl();
+        if (initialUrl != null) {
+            // Nota: uso substring(1) per rimuovere la "@" iniziale e mettere "/"
+            Image initialImage = new Image(getClass().getResourceAsStream(initialUrl.substring(1)));
+            profilePicImageView.setImage(initialImage);
+        }
+
+        // 2. Mettiti in ascolto per futuri cambiamenti
+        UserProfileService.getInstance().profileImageUrlProperty().addListener((obs, oldUrl, newUrl) -> {
+            if (newUrl != null && !newUrl.isEmpty()) {
+                try {
+                    // Rimuovi la "@" e caricala come risorsa
+                    Image newImage = new Image(getClass().getResourceAsStream(newUrl.substring(1)));
+                    profilePicImageView.setImage(newImage);
+                } catch (Exception e) {
+                    System.err.println("Impossibile caricare l'immagine: " + newUrl);
+                }
+            }
+        });
+    }
 
     @FXML
     void handleBattleButton(ActionEvent event) {
