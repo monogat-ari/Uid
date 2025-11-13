@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootStack" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1080.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.profile.homeController">
+    <!-- BACKGROUND IMAGE -->
+    <children>
+        <ImageView fx:id="backgroundImageView" fitHeight="700.0" fitWidth="1300.0" preserveRatio="true">
+            <image>
+                <Image url="@imagini/pixel-art-dungeon-background-8-bit-games_334978-15831.jpg" />
+            </image>
+        </ImageView>
+        <BorderPane fx:id="rootPane" layoutX="10.0" layoutY="10.0" prefHeight="450.0" prefWidth="800.0">
+            <left>
+                <VBox alignment="CENTER" prefHeight="475.0" prefWidth="320.0" spacing="30.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showProfile" prefHeight="78.0" prefWidth="174.0" style="-fx-background-color: transparent;" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/profile-button.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="closetButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCloset" prefHeight="63.0" prefWidth="161.0" style="-fx-background-color: transparent;" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/closet-button.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+            </left>
+            <right>
+                <VBox alignment="CENTER" prefHeight="475.0" prefWidth="320.0" spacing="30.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="bossButton" mnemonicParsing="false" onAction="#showBoss" prefHeight="74.0" prefWidth="166.0" style="-fx-background-color: transparent;" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/bigBoss-button.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="shopButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showShop" prefHeight="66.0" prefWidth="207.0" style="-fx-background-color: transparent;" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="65.0" fitWidth="225.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/shop-button.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+            </right>
+            <bottom>
+                <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="1249.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showAddTask" prefHeight="116.0" prefWidth="333.0" style="-fx-background-color: transparent;" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="75.0" fitWidth="316.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/task-button.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+            </bottom>
+         <top>
+            <StackPane prefHeight="105.0" prefWidth="1249.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="194.0" fitWidth="406.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/shape(6).png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Region prefHeight="133.0" prefWidth="370.0" />
+                        <ImageView fx:id="profilePicImageView" fitHeight="74.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/chr_icon_1025.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" prefHeight="106.0" prefWidth="214.0">
+                           <children>
+                              <Label fx:id="userName" prefHeight="24.0" prefWidth="115.0" text="Monogat.ari" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets right="90.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <ProgressBar prefHeight="23.0" prefWidth="208.0" progress="0.64" />
+                           </children>
+                        </VBox>
+                        <Region prefHeight="133.0" prefWidth="357.0" />
+                        <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/pixel-art-game-currency-coin-vector.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="soldiLabel" prefHeight="19.0" prefWidth="39.0" text="5000">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </top>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="characterSprite" fitHeight="334.0" fitWidth="317.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Immagine_WhatsApp_2025-10-17_ore_12.44.01_e96b3583-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </center>
+        </BorderPane>
+    </children>
+</StackPane>

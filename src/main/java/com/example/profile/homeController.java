@@ -29,6 +29,8 @@ public class homeController implements Initializable {
     @FXML private javafx.scene.control.Label soldiLabel;
     @FXML private ImageView backgroundImageView;
 
+    @FXML private ImageView profilePicImageView;
+
     private Image currentBackgroundImage = null;
 
     private HelloApplication mainApp;
@@ -46,8 +48,6 @@ public class homeController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
-
         Image started = BackgroundService.getInstance().getBackground();
         if (started != null) {
             applyBackground(rootStack != null ? rootStack : rootPane, started);
@@ -61,6 +61,27 @@ public class homeController implements Initializable {
                 Region target = (rootStack != null) ? rootStack : rootPane;
                 applyBackground(target, newImg);
                 applyBackground(backgroundImageView, newImg);
+            }
+        });
+
+// 1. Imposta l'immagine iniziale caricandola dall'URL nel service
+        String initialUrl = UserProfileService.getInstance().getProfileImageUrl();
+        if (initialUrl != null) {
+            // Nota: uso substring(1) per rimuovere la "@" iniziale e mettere "/"
+            Image initialImage = new Image(getClass().getResourceAsStream(initialUrl.substring(1)));
+            profilePicImageView.setImage(initialImage);
+        }
+
+        // 2. Mettiti in ascolto per futuri cambiamenti
+        UserProfileService.getInstance().profileImageUrlProperty().addListener((obs, oldUrl, newUrl) -> {
+            if (newUrl != null && !newUrl.isEmpty()) {
+                try {
+                    // Rimuovi la "@" e caricala come risorsa
+                    Image newImage = new Image(getClass().getResourceAsStream(newUrl.substring(1)));
+                    profilePicImageView.setImage(newImage);
+                } catch (Exception e) {
+                    System.err.println("Impossibile caricare l'immagine: " + newUrl);
+                }
             }
         });
     }
