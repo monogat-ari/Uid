@@ -83,7 +83,6 @@ public class profilePicChooserController {
         this.mainController = mainController;
         this.blurredPane = mainContentPane;
 
-        // Prendi gli URL correnti DIRETTAMENTE dal Service
         String currentAvatarUrl = UserProfileService.getInstance().getProfileImageUrl();
 
         //serve ad avere sempre selezionata la propria immagine profilo
@@ -123,12 +122,8 @@ public class profilePicChooserController {
         if (selected != null) {
             String imageUrl = (String) selected.getUserData();
 
-            // --- MODIFICA QUI ---
-            // VECCHIO: mainController.updateProfilePicture(imageUrl);
-            // NUOVO: Aggiorna il servizio centrale
             UserProfileService.getInstance().setProfileImageUrl(imageUrl);
 
-            // Questa riga va benissimo, salva la preferenza
             Preferences prefs = Preferences.userNodeForPackage(profileController.class);
             prefs.put("avatar_url", imageUrl);
         }

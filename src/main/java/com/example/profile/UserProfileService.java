@@ -8,7 +8,6 @@ public class UserProfileService {
 
     private static final UserProfileService instance = new UserProfileService();
 
-    // Usiamo StringProperty per gli URL, come nel tuo codice
     private final StringProperty profileImageUrl = new SimpleStringProperty();
     private final StringProperty bannerImageUrl = new SimpleStringProperty();
 
@@ -26,7 +25,7 @@ public class UserProfileService {
         return instance;
     }
 
-    // --- Metodi per FOTO PROFILO ---
+    //metodi per la foto profilo
     public StringProperty profileImageUrlProperty() {
         return profileImageUrl;
     }
@@ -37,14 +36,4 @@ public class UserProfileService {
         profileImageUrl.set(url);
     }
 
-    // --- Metodi per BANNER ---
-    public StringProperty bannerImageUrlProperty() {
-        return bannerImageUrl;
-    }
-    public String getBannerImageUrl() {
-        return bannerImageUrl.get();
-    }
-    public void setBannerImageUrl(String url) {
-        bannerImageUrl.set(url);
-    }
 }

@@ -1,7 +1,6 @@
 package com.example.profile;
 
 import javafx.animation.PauseTransition;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -64,7 +60,7 @@ public class homeController implements Initializable {
             }
         });
 
-// 1. Imposta l'immagine iniziale caricandola dall'URL nel service
+        //Imposta l'immagine iniziale caricandola dall'URL nel service
         String initialUrl = UserProfileService.getInstance().getProfileImageUrl();
         if (initialUrl != null) {
             // Nota: uso substring(1) per rimuovere la "@" iniziale e mettere "/"
@@ -72,7 +68,7 @@ public class homeController implements Initializable {
             profilePicImageView.setImage(initialImage);
         }
 
-        // 2. Mettiti in ascolto per futuri cambiamenti
+        // Si mette in ascolto per futuri cambiamenti
         UserProfileService.getInstance().profileImageUrlProperty().addListener((obs, oldUrl, newUrl) -> {
             if (newUrl != null && !newUrl.isEmpty()) {
                 try {
@@ -125,7 +121,7 @@ public class homeController implements Initializable {
             System.err.println("Errore durante il caricamento di profile.fxml");
             e.printStackTrace();
         } catch (Exception e) {
-            // Aggiungo un catch generico in caso 'ProfileController' sia null o altro
+            // catch generico in caso 'ProfileController' sia null o altro
             System.err.println("Errore generico in showProfile:");
             e.printStackTrace();
         }
@@ -200,7 +196,7 @@ public class homeController implements Initializable {
             System.err.println("Errore durante il caricamento di profile.fxml");
             e.printStackTrace();
         } catch (Exception e) {
-            // Aggiungo un catch generico in caso 'ProfileController' sia null o altro
+            // catch generico in caso 'ProfileController' sia null o altro
             System.err.println("Errore generico in showProfile:");
             e.printStackTrace();
         }
